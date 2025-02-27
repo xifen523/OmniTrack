@@ -26,8 +26,7 @@ https://github.com/user-attachments/assets/2c9062ee-7148-4e00-bc63-a789a1b55b11
 
 | ![space-1.jpg](teaser/arch.png) | 
 |:--:| 
-| ***Figure 1. The proposed OmniTrack pipeline**. CSEM refers to the CircularStatE Module
-, DA stands for data association, E2E denotes the End-to-End tracking paradigm, TBD refers to the Track-By-Detection tracking paradigm, Upd refers to updating tracks, Init to initializing tracks, and Del to deleting tracks.* |
+| ***Figure 1. The proposed OmniTrack pipeline**. CSEM refers to the CircularStatE Module, DA stands for data association, E2E denotes the End-to-End tracking paradigm, TBD refers to the Track-By-Detection tracking paradigm, Upd refers to updating tracks, Init to initializing tracks, and Del to deleting tracks.* |
 
 ## Dataset
 
