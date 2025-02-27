@@ -20,10 +20,7 @@ The dataset and code will be made publicly available.
 
 ## Demo
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/xifen523/OmniTrack/blob/main/teaser/demo_compressed.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![Demo Video](https://github.com/xifen523/OmniTrack/blob/main/teaser/demo_compressed.mp4)
 
 ## Method
 
