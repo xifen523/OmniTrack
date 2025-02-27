@@ -1,10 +1,9 @@
 <!-- # OmniTrack
 The official implementation of OmniTrack: Omnidirectional Multi-Object Tracking (CVPR 2025) -->
 
-<div align="center">   
-  
-# OmniTrack: Omnidirectional Multi-Object Tracking (CVPR 2025)
-</div>
+<p align="center">
+<h1 align="center"><strong>OmniTrack: Omnidirectional Multi-Object Tracking</strong></h1>
+<h3 align="center">CVPR 2025</h3>
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/omnitracker-unifying-object-tracking-by/multi-object-tracking-on-jrdb)](https://paperswithcode.com/sota/multi-object-tracking-on-jrdb?p=omnitracker-unifying-object-tracking-by)
 
