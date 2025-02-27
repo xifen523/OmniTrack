@@ -20,7 +20,7 @@ The dataset and code will be made publicly available.
 
 ## Demo
 
-![Demo Video](https://github.com/xifen523/OmniTrack/blob/main/teaser/demo_compressed.mp4)
+https://github.com/user-attachments/assets/2c9062ee-7148-4e00-bc63-a789a1b55b11
 
 ## Method
 
