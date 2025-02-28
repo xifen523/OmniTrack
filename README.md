@@ -19,7 +19,7 @@ The dataset and code will be made publicly available.
 
 ## Demo
 
-https://github.com/user-attachments/assets/2c9062ee-7148-4e00-bc63-a789a1b55b11
+https://github.com/user-attachments/assets/ff612706-8c87-418e-9a8f-d1f63a251ec0
 
 ## Method
 
