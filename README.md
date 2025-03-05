@@ -32,3 +32,17 @@ https://github.com/user-attachments/assets/ff612706-8c87-418e-9a8f-d1f63a251ec0
 - [x] JRDB
 - [x] QuadTrack
 
+## Publication
+If you find this repo useful, please consider referencing the following paper:
+```
+@article{luo2025omniTrack,
+  title={Omnidirectional Multi-Object Tracking},
+  author={Kai Luo, Hao Shi, Sheng Wu, Fei Teng, Mengfei Duan, Chang Huang, Yuhang Wang, Kaiwei Wang, Kailun Yang},
+  journal={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025}
+}
+```
+
+## Acknowledgement
+
+Our code is heavily based on [Sparse4D](https://github.com/HorizonRobotics/Sparse4D), thanks for their excellent work!
