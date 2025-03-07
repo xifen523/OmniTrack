@@ -7,6 +7,8 @@ The official implementation of OmniTrack: Omnidirectional Multi-Object Tracking 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/omnitracker-unifying-object-tracking-by/multi-object-tracking-on-jrdb)](https://paperswithcode.com/sota/multi-object-tracking-on-jrdb?p=omnitracker-unifying-object-tracking-by)
 
+More details can be found in our paper [PDF](https://arxiv.org/pdf/2503.04565)
+
 ## News
 - [2025/02]: 🔥 OmniTrack is accepted by [CVPR 2025](https://cvpr2025.thecvf.com/).
 - [2024/11]: OmniTrack achieve the SOTA on [JRDB MOT (Multi-Object Tracking) Task](http://www.semantic-kitti.org/tasks.html#ssc) with **26.92% HOTA** (Track-by-Detection)!
