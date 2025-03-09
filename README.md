@@ -5,7 +5,7 @@ The official implementation of OmniTrack: Omnidirectional Multi-Object Tracking 
 <h1 align="center"><strong>OmniTrack: Omnidirectional Multi-Object Tracking</strong></h1>
 <h3 align="center">CVPR 2025</h3>
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/omnitracker-unifying-object-tracking-by/multi-object-tracking-on-jrdb)](https://paperswithcode.com/sota/multi-object-tracking-on-jrdb?p=omnitracker-unifying-object-tracking-by)
+[![arXiv](https://img.shields.io/badge/arXiv-2503.04565-<COLOR>.svg)](https://arxiv.org/abs/2503.04565) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/omnitracker-unifying-object-tracking-by/multi-object-tracking-on-jrdb)](https://paperswithcode.com/sota/multi-object-tracking-on-jrdb?p=omnitracker-unifying-object-tracking-by)
 
 More details can be found in our paper [PDF](https://arxiv.org/pdf/2503.04565)
 
