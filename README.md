@@ -28,6 +28,16 @@ https://github.com/user-attachments/assets/ff612706-8c87-418e-9a8f-d1f63a251ec0
 |:--:| 
 | ***Figure 1. The proposed OmniTrack pipeline**. CSEM refers to the CircularStatE Module, DA stands for data association, E2E denotes the End-to-End tracking paradigm, TBD refers to the Track-By-Detection tracking paradigm, Upd refers to updating tracks, Init to initializing tracks, and Del to deleting tracks.* |
 
+## Installation
+Requirements are not in principle hard requirements, but there might be some differences (not tested):
+- Linux
+- Python 3.10
+- CUDA 11.8
+- torch 2.1.1
+
+[Quick Start](docs/quick_start.md) \
+[Dataset preparation](docs/dataset_preparation.md)
+
 ## Dataset
 
 - [x] JRDB
@@ -46,4 +56,4 @@ If you find this repo useful, please consider referencing the following paper:
 
 ## Acknowledgement
 
-Our code is heavily based on [Sparse4D](https://github.com/HorizonRobotics/Sparse4D), thanks for their excellent work!
+Our code is heavily based on [Sparse4D](https://github.com/HorizonRobotics/Sparse4D)、 [ultralytics]() and [hybirdSORT]() thanks for their excellent work!

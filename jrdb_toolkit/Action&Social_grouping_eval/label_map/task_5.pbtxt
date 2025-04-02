@@ -1,0 +1,96 @@
+item {
+  name: "walking"
+  id: 1
+}
+item {
+  name: "standing"
+  id: 2
+}
+item {
+  name: "holding sth"
+  id: 3
+}
+item {
+  name: "sitting"
+  id: 4
+}
+item {
+  name: "listening to someone"
+  id: 5
+}
+item {
+  name: "talking to someone"
+  id: 6
+}
+item {
+  name: "looking at robot"
+  id: 7
+}
+item {
+  name: "looking into sth"
+  id: 8
+}
+item {
+  name: "looking at sth"
+  id: 9
+}
+item {
+  name: "cycling"
+  id: 10
+}
+item {
+  name: "going upstairs"
+  id: 11
+}
+item {
+  name: "bending"
+  id: 12
+}
+item {
+  name: "typing"
+  id: 13
+}
+item {
+  name: "interaction with door"
+  id: 14
+}
+item {
+  name: "eating sth"
+  id: 15
+}
+item {
+  name: "talking on the phone"
+  id: 16
+}
+item {
+  name: "pointing at sth"
+  id: 17
+}
+item {
+  name: "going downstairs"
+  id: 18
+}
+item {
+  name: "reading"
+  id: 19
+}
+item {
+  name: "pushing"
+  id: 20
+}
+item {
+  name: "skating"
+  id: 21
+}
+item {
+  name: "scootering"
+  id: 22
+}
+item {
+  name: "greeting gestures"
+  id: 23
+}
+item {
+  name: "running"
+  id: 24
+}

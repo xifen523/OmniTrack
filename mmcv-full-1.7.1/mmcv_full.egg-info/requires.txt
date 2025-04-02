@@ -1,0 +1,17 @@
+addict
+numpy
+packaging
+Pillow
+pyyaml
+yapf
+
+[:sys_platform == "win32"]
+regex
+
+[all]
+
+[build]
+
+[optional]
+
+[tests]

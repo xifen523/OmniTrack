@@ -1,0 +1,159 @@
+ninja_required_version = 1.3
+cxx = c++
+nvcc = /usr/local/cuda/bin/nvcc
+
+cflags = -pthread -B /root/miniconda3/envs/OmniTrack/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /root/miniconda3/envs/OmniTrack/include -fPIC -O2 -isystem /root/miniconda3/envs/OmniTrack/include -fPIC -DMMCV_WITH_CUDA -I/root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch -I/root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/common -I/root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/common/cuda -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include/TH -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/OmniTrack/include/python3.10 -c
+post_cflags = -std=c++17 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0
+cuda_cflags = -DMMCV_WITH_CUDA -I/root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch -I/root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/common -I/root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/common/cuda -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include/TH -I/root/miniconda3/envs/OmniTrack/lib/python3.10/site-packages/torch/include/THC -I/usr/local/cuda/include -I/root/miniconda3/envs/OmniTrack/include/python3.10 -c
+cuda_post_cflags = -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -std=c++17 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_ext -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+rule cuda_compile
+  depfile = $out.d
+  deps = gcc
+  command = $nvcc  $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+
+
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/active_rotated_filter.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/active_rotated_filter.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/assign_score_withk.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/assign_score_withk.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/ball_query.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/ball_query.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/bbox_overlaps.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/bbox_overlaps.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/border_align.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/border_align.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/box_iou_quadri.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/box_iou_quadri.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/box_iou_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/box_iou_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/carafe.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/carafe.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/carafe_naive.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/carafe_naive.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/chamfer_distance.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/chamfer_distance.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/contour_expand.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/contour_expand.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/convex_iou.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/convex_iou.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/correlation.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/correlation.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/active_rotated_filter.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/active_rotated_filter.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/box_iou_quadri.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/box_iou_quadri.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/box_iou_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/box_iou_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/deform_conv.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/deform_conv.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/modulated_deform_conv.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/modulated_deform_conv.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/nms.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/nms.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/nms_quadri.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/nms_quadri.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/nms_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/nms_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/pixel_group.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/pixel_group.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/points_in_boxes.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/points_in_boxes.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/psamask.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/psamask.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/roi_align.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/roi_align.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/roi_align_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/roi_align_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/rotated_feature_align.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/rotated_feature_align.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/sparse_indice.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/sparse_indice.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/sparse_maxpool.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/sparse_maxpool.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/sparse_reordering.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/sparse_reordering.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cpu/voxelization.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cpu/voxelization.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/active_rotated_filter_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/active_rotated_filter_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/assign_score_withk_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/assign_score_withk_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/ball_query_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/ball_query_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/bbox_overlaps_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/bbox_overlaps_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/border_align_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/border_align_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/box_iou_quadri_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/box_iou_quadri_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/box_iou_rotated_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/box_iou_rotated_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/carafe_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/carafe_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/carafe_naive_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/carafe_naive_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/chamfer_distance_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/chamfer_distance_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/convex_iou.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/convex_iou.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/correlation_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/correlation_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/cudabind.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/cudabind.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/deform_conv_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/deform_conv_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/deform_roi_pool_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/deform_roi_pool_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/diff_iou_rotated_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/diff_iou_rotated_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/focal_loss_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/focal_loss_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/furthest_point_sample_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/furthest_point_sample_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/fused_bias_leakyrelu_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/fused_bias_leakyrelu_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/fused_spconv_ops_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/fused_spconv_ops_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/gather_points_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/gather_points_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/group_points_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/group_points_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/iou3d_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/iou3d_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/knn_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/knn_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/masked_conv2d_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/masked_conv2d_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/min_area_polygons.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/min_area_polygons.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/modulated_deform_conv_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/modulated_deform_conv_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/ms_deform_attn_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/ms_deform_attn_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/nms_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/nms_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/nms_quadri_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/nms_quadri_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/nms_rotated_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/nms_rotated_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/points_in_boxes_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/points_in_boxes_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/points_in_polygons_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/points_in_polygons_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/prroi_pool_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/prroi_pool_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/psamask_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/psamask_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/riroi_align_rotated_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/riroi_align_rotated_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/roi_align_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/roi_align_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/roi_align_rotated_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/roi_align_rotated_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/roi_pool_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/roi_pool_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/roiaware_pool3d_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/roiaware_pool3d_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/roipoint_pool3d_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/roipoint_pool3d_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/rotated_feature_align_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/rotated_feature_align_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/scatter_points_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/scatter_points_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/sparse_indice.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/sparse_indice.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/sparse_maxpool.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/sparse_maxpool.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/sparse_pool_ops_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/sparse_pool_ops_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/sparse_reordering.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/sparse_reordering.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/spconv_ops_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/spconv_ops_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/stack_ball_query_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/stack_ball_query_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/stack_group_points_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/stack_group_points_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/sync_bn_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/sync_bn_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/three_interpolate_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/three_interpolate_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/three_nn_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/three_nn_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/tin_shift_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/tin_shift_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/upfirdn2d_kernel.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/upfirdn2d_kernel.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/cuda/voxelization_cuda.o: cuda_compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/cuda/voxelization_cuda.cu
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/deform_conv.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/deform_conv.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/deform_roi_pool.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/deform_roi_pool.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/diff_iou_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/diff_iou_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/focal_loss.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/focal_loss.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/furthest_point_sample.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/furthest_point_sample.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/fused_bias_leakyrelu.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/fused_bias_leakyrelu.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/fused_spconv_ops.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/fused_spconv_ops.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/gather_points.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/gather_points.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/group_points.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/group_points.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/info.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/info.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/iou3d.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/iou3d.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/knn.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/knn.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/masked_conv2d.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/masked_conv2d.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/min_area_polygons.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/min_area_polygons.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/modulated_deform_conv.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/modulated_deform_conv.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/ms_deform_attn.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/ms_deform_attn.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/nms.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/nms.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/nms_quadri.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/nms_quadri.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/nms_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/nms_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/pixel_group.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/pixel_group.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/points_in_boxes.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/points_in_boxes.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/points_in_polygons.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/points_in_polygons.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/prroi_pool.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/prroi_pool.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/psamask.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/psamask.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/pybind.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/pybind.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/riroi_align_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/riroi_align_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/roi_align.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/roi_align.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/roi_align_rotated.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/roi_align_rotated.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/roi_pool.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/roi_pool.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/roiaware_pool3d.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/roiaware_pool3d.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/roipoint_pool3d.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/roipoint_pool3d.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/rotated_feature_align.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/rotated_feature_align.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/scatter_points.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/scatter_points.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/sparse_pool_ops.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/sparse_pool_ops.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/spconv_ops.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/spconv_ops.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/sync_bn.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/sync_bn.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/three_interpolate.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/three_interpolate.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/three_nn.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/three_nn.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/tin_shift.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/tin_shift.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/upfirdn2d.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/upfirdn2d.cpp
+build /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/build/temp.linux-x86_64-cpython-310/mmcv/ops/csrc/pytorch/voxelization.o: compile /root/autodl-tmp/OmniTrack/mmcv-full-1.7.1/mmcv/ops/csrc/pytorch/voxelization.cpp
+
+
+
+
+
+

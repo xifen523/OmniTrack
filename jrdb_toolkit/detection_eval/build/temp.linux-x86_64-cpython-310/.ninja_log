@@ -1,0 +1,9 @@
+# ninja log v5
+1	1873	1730094404177303626	/root/autodl-tmp/sparse4D_track/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_nms_kernel.o	998d3227851976eb
+0	13022	1730094415313401456	/root/autodl-tmp/sparse4D_track/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_cpu.o	1d4ad177187d45cb
+1	13139	1730094415429402474	/root/autodl-tmp/sparse4D_track/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_nms_api.o	f4b7fdc4d90fee3
+0	13220	1730094415513403212	/root/autodl-tmp/sparse4D_track/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_nms.o	82964e27cdaedd4f
+18	3233	1743169621263052126	/root/autodl-tmp/OmniTrack/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_nms_kernel.o	32c0a91c6385a6bc
+17	22316	1743169640327602199	/root/autodl-tmp/OmniTrack/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_nms.o	6d600d74a294f07a
+16	22692	1743169640703613041	/root/autodl-tmp/OmniTrack/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_cpu.o	b99f3d18f1c63c7e
+18	22926	1743169640935619730	/root/autodl-tmp/OmniTrack/jrdb_toolkit/detection_eval/build/temp.linux-x86_64-cpython-310/src/iou3d_nms_api.o	70fe0b052ca5ab42

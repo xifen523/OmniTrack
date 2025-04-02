@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: mmcv-full
+Version: 1.7.1
+Summary: OpenMMLab Computer Vision Foundation
+Home-page: https://github.com/open-mmlab/mmcv
+Author: MMCV Contributors
+Author-email: openmmlab@gmail.com
+Keywords: computer vision
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Utilities
+Provides-Extra: all
+Provides-Extra: tests
+Provides-Extra: build
+Provides-Extra: optional
+License-File: LICENSE
+License-File: LICENSES.md

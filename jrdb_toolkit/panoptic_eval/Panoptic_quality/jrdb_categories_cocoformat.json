@@ -1,0 +1,866 @@
+[
+    {
+        "supercategory": "",
+        "color": [
+            128,
+            128,
+            128
+        ],
+        "isthing": 0,
+        "id": 0,
+        "name": "road",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            100,
+            0
+        ],
+        "isthing": 0,
+        "id": 1,
+        "name": "terrain",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            255,
+            191,
+            0
+        ],
+        "isthing": 0,
+        "id": 2,
+        "name": "sky",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            255,
+            0
+        ],
+        "isthing": 0,
+        "id": 3,
+        "name": "vegetation",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            128,
+            128,
+            0
+        ],
+        "isthing": 0,
+        "id": 4,
+        "name": "wall",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            128,
+            0,
+            0
+        ],
+        "isthing": 0,
+        "id": 5,
+        "name": "column",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            240,
+            255,
+            255
+        ],
+        "isthing": 0,
+        "id": 6,
+        "name": "building",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            30,
+            105,
+            210
+        ],
+        "isthing": 0,
+        "id": 7,
+        "name": "stair",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            140,
+            230,
+            240
+        ],
+        "isthing": 0,
+        "id": 8,
+        "name": "ceiling",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            170,
+            178,
+            32
+        ],
+        "isthing": 0,
+        "id": 9,
+        "name": "barrier/fence",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            235,
+            206,
+            135
+        ],
+        "isthing": 1,
+        "id": 10,
+        "name": "crutch",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            255,
+            69,
+            0
+        ],
+        "isthing": 1,
+        "id": 11,
+        "name": "fire_extinguisher",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            60,
+            179,
+            113
+        ],
+        "isthing": 1,
+        "id": 12,
+        "name": "big_socket/button",
+        "priority": 3
+    },
+    {
+        "supercategory": "",
+        "color": [
+            72,
+            61,
+            139
+        ],
+        "isthing": 1,
+        "id": 13,
+        "name": "airpot",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            100,
+            149,
+            237
+        ],
+        "isthing": 1,
+        "id": 14,
+        "name": "controller",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            255,
+            105,
+            180
+        ],
+        "isthing": 1,
+        "id": 15,
+        "name": "umbrella",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            210,
+            105,
+            30
+        ],
+        "isthing": 1,
+        "id": 16,
+        "name": "animal",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            220,
+            220,
+            220
+        ],
+        "isthing": 1,
+        "id": 17,
+        "name": "monitor",
+        "priority": 3
+    },
+    {
+        "supercategory": "",
+        "color": [
+            105,
+            105,
+            105
+        ],
+        "isthing": 1,
+        "id": 18,
+        "name": "carpet",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            107,
+            142,
+            35
+        ],
+        "isthing": 1,
+        "id": 19,
+        "name": "cabinet",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            123,
+            104,
+            238
+        ],
+        "isthing": 1,
+        "id": 20,
+        "name": "jacket",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            178,
+            34,
+            34
+        ],
+        "isthing": 1,
+        "id": 21,
+        "name": "emergency_pole",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            154,
+            205,
+            50
+        ],
+        "isthing": 1,
+        "id": 22,
+        "name": "helmet",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            240,
+            128,
+            128
+        ],
+        "isthing": 1,
+        "id": 23,
+        "name": "peripheral",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            95,
+            158,
+            160
+        ],
+        "isthing": 1,
+        "id": 24,
+        "name": "curtain",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            188,
+            143,
+            143
+        ],
+        "isthing": 1,
+        "id": 25,
+        "name": "box",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            70,
+            130,
+            180
+        ],
+        "isthing": 1,
+        "id": 26,
+        "name": "document",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            240,
+            230,
+            140
+        ],
+        "isthing": 1,
+        "id": 27,
+        "name": "television",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            255,
+            127,
+            80
+        ],
+        "isthing": 1,
+        "id": 28,
+        "name": "light_pole",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            119,
+            136,
+            153
+        ],
+        "isthing": 1,
+        "id": 29,
+        "name": "board",
+        "priority": 3
+    },
+    {
+        "supercategory": "",
+        "color": [
+            176,
+            224,
+            230
+        ],
+        "isthing": 1,
+        "id": 30,
+        "name": "manhole",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            255,
+            218,
+            185
+        ],
+        "isthing": 1,
+        "id": 31,
+        "name": "phone",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            219,
+            112,
+            147
+        ],
+        "isthing": 1,
+        "id": 32,
+        "name": "ladder",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            255,
+            160,
+            122
+        ],
+        "isthing": 1,
+        "id": 33,
+        "name": "waterbottle",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            175,
+            238,
+            238
+        ],
+        "isthing": 1,
+        "id": 34,
+        "name": "picture_frames",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            205,
+            133,
+            63
+        ],
+        "isthing": 1,
+        "id": 35,
+        "name": "standee",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            250,
+            128,
+            114
+        ],
+        "isthing": 1,
+        "id": 36,
+        "name": "store_sign",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            233,
+            150,
+            122
+        ],
+        "isthing": 1,
+        "id": 37,
+        "name": "statues",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            173,
+            216,
+            230
+        ],
+        "isthing": 1,
+        "id": 38,
+        "name": "cargo",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            255,
+            255,
+            0
+        ],
+        "isthing": 1,
+        "id": 39,
+        "name": "tableware",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            250,
+            250,
+            210
+        ],
+        "isthing": 1,
+        "id": 40,
+        "name": "accessory",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            192,
+            192,
+            192
+        ],
+        "isthing": 1,
+        "id": 41,
+        "name": "other",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            135,
+            206,
+            235
+        ],
+        "isthing": 1,
+        "id": 42,
+        "name": "clock",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            216,
+            191,
+            216
+        ],
+        "isthing": 1,
+        "id": 43,
+        "name": "golfcart",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            34,
+            139,
+            34
+        ],
+        "isthing": 1,
+        "id": 44,
+        "name": "wall_panel",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            221,
+            160,
+            221
+        ],
+        "isthing": 1,
+        "id": 45,
+        "name": "decoration",
+        "priority": 4
+    },
+    {
+        "supercategory": "",
+        "color": [
+            218,
+            112,
+            214
+        ],
+        "isthing": 1,
+        "id": 46,
+        "name": "hanging_light",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            147,
+            20,
+            255
+        ],
+        "isthing": 1,
+        "id": 47,
+        "name": "window",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            215,
+            255
+        ],
+        "isthing": 1,
+        "id": 48,
+        "name": "poster",
+        "priority": 4
+    },
+    {
+        "supercategory": "",
+        "color": [
+            147,
+            112,
+            219
+        ],
+        "isthing": 1,
+        "id": 49,
+        "name": "lift",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            128,
+            128
+        ],
+        "isthing": 1,
+        "id": 50,
+        "name": "vent",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            139,
+            0,
+            139
+        ],
+        "isthing": 1,
+        "id": 51,
+        "name": "fountain",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            139,
+            139
+        ],
+        "isthing": 1,
+        "id": 52,
+        "name": "door_handle",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            209,
+            206,
+            0
+        ],
+        "isthing": 1,
+        "id": 53,
+        "name": "floor/walking_path",
+        "priority": 0
+    },
+    {
+        "supercategory": "",
+        "color": [
+            200,
+            0,
+            0
+        ],
+        "isthing": 1,
+        "id": 54,
+        "name": "machines",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            200,
+            200
+        ],
+        "isthing": 1,
+        "id": 55,
+        "name": "child",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            200,
+            200,
+            0
+        ],
+        "isthing": 1,
+        "id": 56,
+        "name": "trash_bin",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            0,
+            100
+        ],
+        "isthing": 1,
+        "id": 57,
+        "name": "shelf",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            100,
+            0,
+            0
+        ],
+        "isthing": 1,
+        "id": 58,
+        "name": "car",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            100,
+            100
+        ],
+        "isthing": 1,
+        "id": 59,
+        "name": "bicycle/scooter",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            100,
+            0,
+            100
+        ],
+        "isthing": 1,
+        "id": 60,
+        "name": "bag",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            100,
+            100,
+            0
+        ],
+        "isthing": 1,
+        "id": 61,
+        "name": "big_vehicle",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            75,
+            150
+        ],
+        "isthing": 1,
+        "id": 62,
+        "name": "chair/sofa",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            180,
+            105,
+            255
+        ],
+        "isthing": 1,
+        "id": 63,
+        "name": "pedestrian",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            128,
+            0,
+            128
+        ],
+        "isthing": 1,
+        "id": 64,
+        "name": "sign",
+        "priority": 4
+    },
+    {
+        "supercategory": "",
+        "color": [
+            128,
+            128,
+            128
+        ],
+        "isthing": 1,
+        "id": 65,
+        "name": "trolley",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            165,
+            255
+        ],
+        "isthing": 1,
+        "id": 66,
+        "name": "pole/trafficcone",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            212,
+            255,
+            127
+        ],
+        "isthing": 1,
+        "id": 67,
+        "name": "bicyclist/rider",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            196,
+            228,
+            255
+        ],
+        "isthing": 1,
+        "id": 68,
+        "name": "table",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            42,
+            42,
+            165
+        ],
+        "isthing": 1,
+        "id": 69,
+        "name": "skateboard/segway/hoverboard",
+        "priority": 2
+    },
+    {
+        "supercategory": "",
+        "color": [
+            200,
+            0,
+            200
+        ],
+        "isthing": 0,
+        "id": 70,
+        "name": "glass",
+        "priority": 1.5
+    },
+    {
+        "supercategory": "",
+        "color": [
+            0,
+            0,
+            200
+        ],
+        "isthing": 1,
+        "id": 71,
+        "name": "door",
+        "priority": 2
+    }
+]
