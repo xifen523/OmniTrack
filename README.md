@@ -56,4 +56,4 @@ If you find this repo useful, please consider referencing the following paper:
 
 ## Acknowledgement
 
-Our code is heavily based on [Sparse4D](https://github.com/HorizonRobotics/Sparse4D)、 [ultralytics]() and [hybirdSORT]() thanks for their excellent work!
+Our code is heavily based on [Sparse4D](https://github.com/HorizonRobotics/Sparse4D)、 [ultralytics](https://github.com/ultralytics/ultralytics) and [HybridSORT](https://github.com/ymzis69/HybridSORT) thanks for their excellent work!
