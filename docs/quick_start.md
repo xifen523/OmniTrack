@@ -49,5 +49,27 @@ cd ../../
 ###
 ```
 
+
 ## 7. Prepare the dataset
 [Dataset preparation](docs/dataset_preparation.md)
+
+## 8. Generate anchors by K-means
+
+```bash
+python3 tools/anchor_2d_generator.py --ann_file ${pkl_path}/nuscenes_infos_train.pkl
+```
+
+## 9. Download pre-trained weights
+```bash
+mkdir ckpt
+wget https://download.pytorch.org/models/resnet50-19c8e357.pth -O ckpt/resnet50-19c8e357.pth
+```
+
+## 10. Commence training and testing
+```bash
+# train
+bash local_train.sh JRDB_OmniTrack
+
+# test
+bash local_test.sh JRDB_OmniTrack path/to/checkpoint
+```
