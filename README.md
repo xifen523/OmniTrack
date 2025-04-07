@@ -5,13 +5,13 @@ The official implementation of OmniTrack: Omnidirectional Multi-Object Tracking 
 <h1 align="center"><strong>OmniTrack: Omnidirectional Multi-Object Tracking</strong></h1>
 <h3 align="center">CVPR 2025</h3>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2503.04565-<COLOR>.svg)](https://arxiv.org/abs/2503.04565) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/omnitracker-unifying-object-tracking-by/multi-object-tracking-on-jrdb)](https://paperswithcode.com/sota/multi-object-tracking-on-jrdb?p=omnitracker-unifying-object-tracking-by)
+[![arXiv](https://img.shields.io/badge/arXiv-2503.04565-<COLOR>.svg)](https://arxiv.org/abs/2503.04565) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/omnidirectional-multi-object-tracking/multi-object-tracking-on-jrdb)](https://paperswithcode.com/sota/multi-object-tracking-on-jrdb?p=omnidirectional-multi-object-tracking)
 
 More details can be found in our paper [PDF](https://arxiv.org/pdf/2503.04565)
 
 ## News
 - [2025/02]: 🔥 OmniTrack is accepted by [CVPR 2025](https://cvpr2025.thecvf.com/).
-- [2024/11]: OmniTrack achieve the SOTA on [JRDB MOT (Multi-Object Tracking) Task](http://www.semantic-kitti.org/tasks.html#ssc) with **26.92% HOTA** (Track-by-Detection)!
+- [2024/11]: OmniTrack achieves the SOTA on [JRDB MOT (Multi-Object Tracking) Task](http://www.semantic-kitti.org/tasks.html#ssc) with **26.92% HOTA** (Track-by-Detection)!
 </br>
 
 ## Abstract
