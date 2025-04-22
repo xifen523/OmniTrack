@@ -4,7 +4,7 @@
 
 ### 1.1 download JRDB2019 dataset
 
-Download the JRDB2019 dataset from the official website: https://www.jrdb.com/dataset/download/
+Download the JRDB2019 dataset from the official website: [https://www.jrdb.com/dataset/download/](https://jrdb.erc.monash.edu/#downloads)
 
 ### 1.2 extract JRDB2019 dataset
 
