@@ -51,7 +51,7 @@ cd ../../
 
 
 ## 7. Prepare the dataset
-[Dataset preparation](docs/dataset_preparation.md)
+[Dataset preparation](dataset_preparation.md)
 
 ## 8. Generate anchors by K-means
 
