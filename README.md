@@ -44,6 +44,9 @@ Requirements are not in principle hard requirements, but there might be some dif
 
 - [x] JRDB
 - [x] QuadTrack
+  - [Download from Baidu Netdisk](https://pan.baidu.com/s/1qFpUxH4UqlSPH3AlYFH6sA?pwd=Quad) (password: Quad)  
+  - [Download from Hugging Face](https://huggingface.co/datasets/xifen527/QuadTrack)
+
 
 ## Publication
 If you find this repo useful, please consider referencing the following paper:
